@@ -1,3 +1,8 @@
+//MICROSOFT
+
+//If any modificaion is to be done on the no itself then you must use shifting operators
+//brain algo is not going to help out
+
 class Solution
 {
     public:
