@@ -1,0 +1,32 @@
+// { Driver Code Starts
+
+//Initial Template for C++
+
+#include<bits/stdc++.h>
+using namespace std;
+//POWER OF TWO
+//https://practice.geeksforgeeks.org/problems/power-of-2-1587115620/1/?track=DSASP-BitMagic&batchId=154
+class Solution{
+    public:
+    // Function to check if given number n is a power of two.
+    bool isPowerofTwo(long long n){
+        
+        // Your code here   
+        //no of bits in even no is 1
+        return (n!=0 & (n&(n-1))==0);
+        
+    }
+};
+
+//Method 2
+class Solution{
+    public:
+    // Function to check if given number n is a power of two.
+    bool isPowerofTwo(long long n){
+      if(n==0)
+      {
+      return 1;
+      }
+      return ceil(((log2(n))==floor(log2(n)));
+   }
+   
