@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+//Method 1
+int fact(int num)
+{
+    int res=1;
+	while(num!=1) //4-> 4*3*2*1
+	{
+	res=res*num; //4*(3) -->  12
+	num--;
+	}
+cout<<res;
+}
+int main()
+{
+	int num;
+	cin>>num;
+	fact(num);
+}
+//Method 2
+int fact(int num)
+{
+if(num==0)
+{
+	return 1;
+}
+return num*fact(num-1);
+}
+int main()
+{
+	int num;
+	cin>>num;
+	cout<<fact(num);
+}
+
+
