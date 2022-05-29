@@ -1,0 +1,13 @@
+class Solution
+{
+    public:
+    //Function to find position of first set bit in the given number.
+    unsigned int getFirstSetBit(int n)
+    {
+        // Your code here
+        //turning off all the bits except the first set bit
+        n=n & ~(n-1);
+        //return what power of two is needed
+        return log2(n)+1;
+    }
+};
