@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int fact(int num)
+{
+    int res=1;
+	while(num!=1) //4-> 4*3*2*1
+	{
+	res=res*num; //4*(3) -->  12
+	num--;
+	}
+cout<<res<<endl;
+int count=0;
+while(res%10==0)
+{
+	count++;
+	res/=10;
+}
+cout<<count;
+}
+int main()
+{
+	int num;
+	cin>>num;
+	fact(num);
+}
