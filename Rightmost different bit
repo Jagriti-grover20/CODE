@@ -1,0 +1,18 @@
+class Solution
+{
+    public:
+        int posOfRightMostDiffBit(int m, int n)
+{
+  if(m==n)
+  {
+      return -1;
+  }
+
+    int res = m ^ n;
+
+    res = res & ~(res - 1); // turn off all the last bit
+
+   
+   return log2(res) + 1;
+}
+};
