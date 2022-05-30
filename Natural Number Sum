@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int natural_sum(int num)
+{
+	if(num==0)
+	{
+		return 0;
+	}
+	
+	return num+natural_sum(num-1);
+}
+int main()
+{
+	int n;
+	cin>>n;
+	cout<<natural_sum(n);
+}
