@@ -1,0 +1,47 @@
+vector<string>res;
+vector <string> powerSet(string s,string current="",int i=0)
+{
+    if(i==0)
+    {
+      res.clear();
+    }
+   if(i==s.length())
+   {
+       res.push_back(current);
+       return res;
+   }
+   powerSet(s,current,i+1); //excluding 
+   powerSet(s,current+s[i],i+1); //including combinations
+   return res;
+}
+
+
+// { Driver Code Starts.
+
+
+// Driver code
+int main()
+{
+    int T;
+    cin>>T;//testcases
+    while(T--)
+    {
+        string s;
+        cin>>s;//input string
+        
+        //calling powerSet() function
+        vector<string> ans = powerSet(s);
+        
+        //sorting the result of the powerSet() function
+        sort(ans.begin(),ans.end());
+        
+        //printing the result
+        for(auto x:ans)
+        cout<<x<<" ";
+        cout<<endl;
+        
+        
+    }
+
+return 0;
+}   // } Driver Code Ends
