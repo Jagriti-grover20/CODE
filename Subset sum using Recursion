@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int subsetsum(int subset[100],int n,int sum)
+{  //sum pointer is maintained here to find the sum of the subsets
+	//base case
+	if(n==0) //number becomes 0 
+	{ //check for sum if its 0 then return 1 else 0
+		return (sum==0) ? 1 :0 ; 
+	}
+	//recursive case
+	return subsetsum(subset,n-1,sum)+subsetsum(subset,n-1,sum-subset[n-1]); //in not included -> substract the ot included element from the sum 
+int main()
+{
+	int subset[100],sum,n;
+	cout<<"Enter the no of elements of array"<<endl;
+	cin>>n;
+	cout<<"Enter elements"<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cin>>subset[i];
+	}
+	cout<<"Enter the sum "<<endl;
+		cin>>sum;
+	
+	cout<<subsetsum(subset,n,sum);
+	
+}
