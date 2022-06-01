@@ -1,0 +1,27 @@
+//https://leetcode.com/problems/running-sum-of-1d-array/
+void helper(vector<int>& v,int n)
+{
+    //base case
+    if(n==v.size())
+    {
+        return ;
+    }
+    //if numbers are greater than n
+    if(n>=1)
+    { //n and n-1 ko add krdo
+        v[n]=v[n]+v[n-1];
+    }
+     helper(v,n+1); //call recursively for n+1 iterations 
+}
+
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& nums) {
+        if(nums.size()<=1)
+        {
+            return nums;
+        }
+        helper(nums,0);
+        return nums;
+    }
+};
