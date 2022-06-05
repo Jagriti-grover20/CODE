@@ -1,0 +1,24 @@
+include<bits/stdc++.h>
+void replace(char input[],int begin) //xpix 0
+{
+    if(input[begin]=='\0' || input[begin+1]=='\0') 
+    {
+        return;
+    }
+    if(input[begin]=='p' && input[begin+1]=='i') //input[1]=p input[2]=i
+    {
+        input[begin]='3';//1-> 3 2->. 
+        input[begin+1]='.';
+    for(int i=strlen(input)-1;i>=begin+2;i--)//last index would be length -1
+    {
+        input[i+2]=input[i]; //shifting i by 2 places
+    }
+        input[begin+2]='1';
+        input[begin+3]='4';
+    }
+    replace(input,begin+1);        //each time inc beginning with 1
+}
+void replacePi(char input[]) {
+    replace(input,0);
+}
+
