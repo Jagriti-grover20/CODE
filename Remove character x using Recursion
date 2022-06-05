@@ -1,0 +1,17 @@
+void removeX(char input[]) {
+if(input[0]=='\0')
+{
+    return;
+}
+    if(input[0]=='x')
+    {
+        int i=1; //shiftng element from i+1 to i ie here 1 to 0th index
+        for(;input[i]!='\0';i++)
+        {
+            input[i-1]=input[i]; //shifting each character to left side till '\0'
+        }
+        input[i-1]=input[i]; //for null character 
+        removeX(input);//Now the size is shrink
+    }  
+     removeX(input+1);
+}
