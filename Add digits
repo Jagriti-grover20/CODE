@@ -1,0 +1,19 @@
+https://leetcode.com/problems/add-digits/submissions/
+class Solution {
+public:
+    int addDigits(int num) { //38
+        //case : When number is less than 10
+        if(num<10){ // 0 to 9
+            return num; 
+        }
+        int sum=0;
+        //sum=  3(num/10) + 8(num%10) 
+        sum=num%10+addDigits(num/10);
+        
+        if(sum>9){
+            return addDigits(sum);
+        }
+        return sum;
+        
+    }
+};
